@@ -1,6 +1,7 @@
 import pool from '@/lib/db';
 import FallbackImage from '@/components/FallbackImage';
 import { initializeDatabase } from '@/lib/init-db';
+import AddToCartButton from '@/components/AddToCartButton';
 
 export const dynamic = 'force-dynamic'; // Ensure we always fetch fresh data
 
@@ -54,7 +55,7 @@ export default async function Home() {
                 <h2 className="name">{shoe.name}</h2>
                 <div className="priceRow">
                   <span className="price">${parseFloat(shoe.price).toFixed(2)}</span>
-                  <button className="buyButton">Add to Cart</button>
+                  <AddToCartButton shoe={shoe} />
                 </div>
               </div>
             </div>
